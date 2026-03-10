@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript - Make it interactive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        
+        .back-btn {
+            margin-bottom: 20px;
+        }
+        
+        .back-btn a {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #f7df1e;
+            text-shadow: 1px 1px 0 #000;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f7df1e;
+            padding-bottom: 10px;
+        }
+        
+        #more {
+            display: none;
+        }
+        
+        .content {
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        
+        .btn:hover {
+            opacity: 0.8;
+        }
+        
+        .learn-btn {
+            display: inline-block;
+            background-color: #f7df1e;
+            color: black;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px 10px 0;
+            font-weight: bold;
+        }
+        
+        .engine-box {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .engine-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .engine-item {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #bdc3c7;
+        }
+        
+        .nav-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .nav-links a {
+            color: #f7df1e;
+            text-shadow: 1px 1px 0 #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-btn">
+        <a href="new homepage.html">← Back to Home</a>
+    </div>
+    
+    <div class="container">
+        <h1><i class="fa fa-code"></i> JavaScript</h1>
+        
+        <div class="content">
+            <span id="dots"></span>
+            <span id="more">
+                <p><strong>JavaScript</strong> makes websites interactive! When you click a button and something happens - that's JavaScript.</p>
+                
+                <p>It can run in the browser (front-end) or on servers with Node.js (back-end). Super versatile!</p>
+                
+                <div class="engine-box">
+                    <p><strong>JavaScript Engines (different browsers have different ones):</strong></p>
+                    <div class="engine-grid">
+                        <div class="engine-item">V8 - Chrome</div>
+                        <div class="engine-item">SpiderMonkey - Firefox</div>
+                        <div class="engine-item">Chakra - Edge (old)</div>
+                        <div class="engine-item">JavaScriptCore - Safari</div>
+                    </div>
+                </div>
+            </span>
+        </div>
+        
+        <button onclick="myFunction()" id="myBtn" class="btn"><i class="fa fa-tv"></i> Read More</button>
+        
+        <div style="margin: 20px 0;">
+            <a href="https://www.w3schools.com/js/" class="learn-btn" target="_blank"><i class="fa fa-graduation-cap"></i> W3Schools</a>
+            <a href="https://www.javatpoint.com/javascript-tutorial" class="learn-btn" target="_blank"><i class="fa fa-book"></i> JavaTpoint</a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="CSSpage.html">← CSS</a> |
+            <a href="HTMLpage.html">HTML →</a>
+        </div>
+    </div>
+    
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+            
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = '<i class="fa fa-tv"></i> Read More';
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = '<i class="fa fa-arrow-up"></i> Read Less';
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</body>
+</html>

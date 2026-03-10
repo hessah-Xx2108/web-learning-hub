@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Editors - What to use?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        
+        .back-btn {
+            margin-bottom: 20px;
+        }
+        
+        .back-btn a {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .back-btn a:hover {
+            opacity: 0.8;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .intro {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        /* Editor categories */
+        .category {
+            margin: 40px 0;
+        }
+        
+        .category h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .editors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .editor-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+        
+        .editor-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+        
+        .editor-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .editor-header i {
+            font-size: 40px;
+        }
+        
+        .editor-header h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        .editor-desc {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .pros-cons {
+            display: flex;
+            gap: 15px;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        
+        .pros {
+            color: #27ae60;
+        }
+        
+        .cons {
+            color: #e74c3c;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .free-badge {
+            background-color: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .paid-badge {
+            background-color: #e74c3c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        /* Table for comparison */
+        .comparison-table {
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .yes {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .no {
+            color: #e74c3c;
+        }
+        
+        /* Tips section */
+        .tips {
+            background-color: #ecf0f1;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #3498db;
+        }
+        
+        .tips h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .tips ul {
+            list-style-position: inside;
+            color: #555;
+        }
+        
+        .tips li {
+            margin: 10px 0;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .editor-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-btn">
+        <a href="new homepage.html">← Back to Home</a>
+    </div>
+    
+    <div class="container">
+        <h1><i class="fa fa-edit"></i> Types of HTML Editors</h1>
+        
+        <div class="intro">
+            <p>Not sure what to use for coding? Here are some popular HTML editors - from simple to advanced!</p>
+        </div>
+        
+        <!-- Category 1: Text Editors (Simple) -->
+        <div class="category">
+            <h2><i class="fa fa-file-text-o"></i> Simple Text Editors</h2>
+            <p style="margin-bottom: 15px;">Good for beginners, but no special features. Just plain text.</p>
+            
+            <div class="editors-grid">
+                <!-- Notepad -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-file-text" style="color: #3498db;"></i>
+                        <h3>Notepad (Windows)</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Comes with Windows! Super basic but works. You type code, save as .html, open in browser.
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Simple</span>
+                        <span class="cons">✗ No syntax highlighting</span>
+                    </div>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- TextEdit -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-file-text" style="color: #3498db;"></i>
+                        <h3>TextEdit (Mac)</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Comes with Mac. Make sure to use plain text mode (Format > Make Plain Text).
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Simple</span>
+                        <span class="cons">✗ Have to change settings</span>
+                    </div>
+                    <span class="free-badge">FREE</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 2: Code Editors (Popular) -->
+        <div class="category">
+            <h2><i class="fa fa-code"></i> Code Editors (Most Popular)</h2>
+            <p style="margin-bottom: 15px;">Made specifically for coding. Syntax highlighting, autocomplete, etc.</p>
+            
+            <div class="editors-grid">
+                <!-- VS Code -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-window-maximize" style="color: #007acc;"></i>
+                        <h3>VS Code</h3>
+                    </div>
+                    <div class="editor-desc">
+                        The most popular editor right now! Made by Microsoft. Has extensions for everything.
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Extensions</span>
+                        <span class="pros">✓ Git integration</span>
+                    </div>
+                    <a href="https://code.visualstudio.com/" class="download-btn" target="_blank"><i class="fa fa-download"></i> Download</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- Sublime Text -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-window-maximize" style="color: #e67e22;"></i>
+                        <h3>Sublime Text</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Super fast and lightweight. Many people love it. Has a forever free trial.
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Fast</span>
+                        <span class="cons">✗ Nags you to buy</span>
+                    </div>
+                    <a href="https://www.sublimetext.com/" class="download-btn" target="_blank"><i class="fa fa-download"></i> Download</a>
+                    <span class="free-badge">FREE trial</span>
+                </div>
+                
+                <!-- Atom -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-window-maximize" style="color: #7d40ff;"></i>
+                        <h3>Atom</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Made by GitHub. Hackable to the core. Good for beginners.
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Customizable</span>
+                        <span class="cons">✗ Can be slow</span>
+                    </div>
+                    <a href="https://atom.io/" class="download-btn" target="_blank"><i class="fa fa-download"></i> Download</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- Brackets -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-window-maximize" style="color: #40c4ff;"></i>
+                        <h3>Brackets</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Made for web design. Has live preview - see changes in real time!
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Live preview</span>
+                        <span class="cons">✗ Not updated much</span>
+                    </div>
+                    <a href="https://brackets.io/" class="download-btn" target="_blank"><i class="fa fa-download"></i> Download</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- Notepad++ -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-file-text" style="color: #27ae60;"></i>
+                        <h3>Notepad++</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Like Notepad but better. Windows only. Lightweight and fast.
+                    </div>
+                    <div class="pros-cons">
+                        <span class="pros">✓ Lightweight</span>
+                        <span class="cons">✗ Windows only</span>
+                    </div>
+                    <a href="https://notepad-plus-plus.org/" class="download-btn" target="_blank"><i class="fa fa-download"></i> Download</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 3: Online Editors -->
+        <div class="category">
+            <h2><i class="fa fa-cloud"></i> Online Editors (No install needed!)</h2>
+            <p style="margin-bottom: 15px;">Just open your browser and start coding. Good for testing small things.</p>
+            
+            <div class="editors-grid">
+                <!-- CodePen -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-codepen" style="color: #000;"></i>
+                        <h3>CodePen</h3>
+                    </div>
+                    <div class="editor-desc">
+                        See HTML, CSS, and JavaScript results instantly. Great for sharing code.
+                    </div>
+                    <a href="https://codepen.io/" class="download-btn" target="_blank"><i class="fa fa-external-link"></i> Open</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- JSFiddle -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-code" style="color: #2c3e50;"></i>
+                        <h3>JSFiddle</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Test your HTML, CSS, JS online. Can include libraries easily.
+                    </div>
+                    <a href="https://jsfiddle.net/" class="download-btn" target="_blank"><i class="fa fa-external-link"></i> Open</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- Replit -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-code" style="color: #6f42c1;"></i>
+                        <h3>Replit</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Full development environment in browser. Supports many languages.
+                    </div>
+                    <a href="https://replit.com/" class="download-btn" target="_blank"><i class="fa fa-external-link"></i> Open</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+                
+                <!-- W3Schools TryIt -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-graduation-cap" style="color: #4caf50;"></i>
+                        <h3>W3Schools TryIt</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Great for learning. Edit examples and see results immediately.
+                    </div>
+                    <a href="https://www.w3schools.com/html/tryit.asp" class="download-btn" target="_blank"><i class="fa fa-external-link"></i> Open</a>
+                    <span class="free-badge">FREE</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Category 4: IDEs (Professional) -->
+        <div class="category">
+            <h2><i class="fa fa-suitcase"></i> IDEs (For professionals)</h2>
+            <p style="margin-bottom: 15px;">Big, powerful, but might be too much for beginners.</p>
+            
+            <div class="editors-grid">
+                <!-- WebStorm -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-bolt" style="color: #00a8e1;"></i>
+                        <h3>WebStorm</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Made by JetBrains. Very smart autocomplete. Great for JavaScript.
+                    </div>
+                    <span class="paid-badge">PAID</span>
+                </div>
+                
+                <!-- Dreamweaver -->
+                <div class="editor-card">
+                    <div class="editor-header">
+                        <i class="fa fa-eye" style="color: #f7df1e;"></i>
+                        <h3>Dreamweaver</h3>
+                    </div>
+                    <div class="editor-desc">
+                        Old but still used. Has visual editor (see design as you code).
+                    </div>
+                    <span class="paid-badge">PAID</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Table -->
+        <div class="comparison-table">
+            <h2>Quick Comparison</h2>
+            <table>
+                <tr>
+                    <th>Editor</th>
+                    <th>Free?</th>
+                    <th>Syntax Highlight</th>
+                    <th>Auto Complete</th>
+                    <th>Extensions</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td>VS Code</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">Many</td>
+                    <td>Everyone</td>
+                </tr>
+                <tr>
+                    <td>Sublime Text</td>
+                    <td class="yes">✓ (trial)</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">Some</td>
+                    <td>Speed lovers</td>
+                </tr>
+                <tr>
+                    <td>Atom</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">Many</td>
+                    <td>Customization</td>
+                </tr>
+                <tr>
+                    <td>Notepad++</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="no">Basic</td>
+                    <td class="no">Few</td>
+                    <td>Windows, lightweight</td>
+                </tr>
+                <tr>
+                    <td>Brackets</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">Some</td>
+                    <td>Live preview</td>
+                </tr>
+                <tr>
+                    <td>WebStorm</td>
+                    <td class="no">✗</td>
+                    <td class="yes">✓</td>
+                    <td class="yes">✓✓</td>
+                    <td class="yes">Many</td>
+                    <td>Professional JS</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Tips Section -->
+        <div class="tips">
+            <h3><i class="fa fa-lightbulb-o"></i> Tips for beginners:</h3>
+            <ul>
+                <li>Start with <strong>VS Code</strong> - it's free, popular, and has everything you need</li>
+                <li>Learn some keyboard shortcuts - they save so much time!</li>
+                <li>Try online editors first if you don't want to install anything</li>
+                <li>Use extensions! For web dev: Live Server, Prettier, ESLint</li>
+                <li>Don't start with paid IDEs until you know what you're doing</li>
+            </ul>
+        </div>
+        
+        <!-- What we use -->
+        <div style="background-color: #3498db20; padding: 20px; border-radius: 8px; margin: 30px 0;">
+            <h3 style="color: #2c3e50;"><i class="fa fa-users"></i> What do we use?</h3>
+            <p style="margin-top: 10px;">Most of us use <strong>VS Code</strong> with these extensions:</p>
+            <ul style="margin-top: 10px; list-style-position: inside;">
+                <li>Live Server - to see changes instantly</li>
+                <li>Prettier - formats code automatically</li>
+                <li>Bracket Pair Colorizer - makes brackets easier to see</li>
+                <li>HTML CSS Support - autocomplete for classes</li>
+            </ul>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="importance.html"><i class="fa fa-arrow-left"></i> Why Learn?</a>
+            <a href="HTMLpage.html"><i class="fa fa-html5"></i> HTML</a>
+            <a href="CSSpage.html"><i class="fa fa-css3"></i> CSS</a>
+            <a href="JavaScriptpage.html"><i class="fa fa-code"></i> JavaScript</a>
+        </div>
+    </div>
+</body>
+</html>
